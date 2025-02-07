@@ -11,4 +11,23 @@
         }
         return $img_url;
     }
+
+    /* Custom Post Type Start */
+    function create_posttype() {
+        register_post_type( 'news',
+            // CPT Options
+            array(
+            'labels' => array(
+            'name' => __( 'scooter' ),
+            'singular_name' => __( 'Scooter' )
+            ),
+            'public' => true,
+            'has_archive' => false,
+            'rewrite' => array('slug' => 'scooter'),
+            )
+        );
+    }
+    // Hooking up our function to theme setup
+    add_action( 'init', 'create_posttype' );
+    /* Custom Post Type End */
 ?>
