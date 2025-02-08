@@ -22,6 +22,17 @@
 [data-active="true"]{
     display:flex !important;
 }
+[fade-in-out="true"]{
+     animation: fade-inout 0.8s;
+}
+@keyframes fade-inout {
+    from {
+        opacity: 0;
+    }
+    to {
+        display:1 !important;
+    }
+}
 .section-wrapper{
     display: flex;
     flex-direction: row;
@@ -103,6 +114,8 @@
 .display-scooter .body-section{
     margin-top: 80px;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 .display-scooter .body-section img{
     width: 75% !important;
@@ -200,13 +213,19 @@
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
+.confirm-color-section .steps-section .steps .badge-num{
+    margin-right: 6px;
+}
 .confirm-color-section .steps-section::-webkit-scrollbar { /* WebKit */
     width: 0;
     height: 0;
     display: none;
 }
-.confirm-color-section .steps-section .steps-two {
-    padding: 0px 40px;
+.confirm-color-section .steps-section .steps-one {
+    padding-right: 35px;
+}
+.confirm-color-section .steps-section .steps-three {
+    padding-left: 35px;
 }
 .confirm-color-section .steps-section a{
     text-decoration: none !important;
@@ -271,7 +290,7 @@
     display: flex;
     gap: 24px;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     padding: 22px 20px 42px 42px;
     border-radius: 100px;
@@ -350,19 +369,37 @@
     .confirm-color-section .choose-color-options{
         gap: 20px;
     }
+    .confirm-color-section .confirm-btn-sectiion button {
+        margin-top: 75px;
+    }
+    .confirm-color-section .choose-color-options .choose-a-color{
+        width: 28px;
+        height: 28px;
+    }
+    .section-wrapper .display-scooter {
+        width: 50%;
+    }
+    .section-wrapper .confirm-color-section {
+        width: 50%;
+    }
 }
 @media(max-width:1049.98px){
     .section-wrapper .display-scooter{
         padding: 75px 32px;
+        width: 51%;
      }
     .section-wrapper .confirm-color-section{
         padding: 75px 32px;
+        width: 49%;
     }
     .confirm-color-section .selected-model-color{
         padding: 20px 28px 20px 24px;
     }
     .confirm-color-section .choose-color-options{
         padding: 20px 20px 40px 24px;
+    }
+    .confirm-color-section .confirm-btn-sectiion button {
+        margin-top: 60px;
     }
 }
 @media(max-width:991.98px){
@@ -424,7 +461,7 @@
         font-size: 25px;
     }
     .display-scooter .header-section .selected-color {
-        gap: 20px;
+        gap: 12px;
     }
     .display-scooter .header-section .selected-color .color-box {
         width: 26px;
@@ -461,8 +498,17 @@
         height: 15px;
     }
     .display-scooter .footer-section .booking-amount-section {
-        gap: 11.5px;
+        gap: 10px;
     }
+    .confirm-color-section .selected-model-color .model-name-with-color .tick-icon {
+        width: 26px;
+        height: 24px;
+        margin-top: 8px;
+    }
+    .confirm-color-section .selected-model-color .model-name-with-color {
+        gap: 8px;
+    }
+    
 }
 @media(max-width:423.98px){
     .confirm-color-section .choose-color-options{
@@ -481,9 +527,15 @@
     }
 }
 @media(max-width:359.98px){
+    .section-wrapper .display-scooter{
+        padding: 40px 15px 20px 15px;
+     }
+    .section-wrapper .confirm-color-section{
+        padding: 40px 15px 20px 15px;
+    }
     .confirm-color-section .choose-color-options{
-        gap: 8px;
-        padding: 20px 15px 40px 18px;
+        gap: 9px;
+        padding: 20px 15px 40px 16px;
     }
     .display-scooter .footer-section {
         gap: 12px;
@@ -505,5 +557,15 @@
     }
     .display-scooter .footer-section .sub-info-txt p{
         font-size: 9.5px;
+    }
+    .confirm-color-section .selected-model-color .model-name-with-color {
+        gap: 6px;
+    }
+    .confirm-color-section .selected-model-color .scooter-img-small img {
+        width: 106px !important;
+        height: auto !important;
+    }
+    .confirm-color-section .selected-model-color {
+        padding: 20px 16px 20px 15px;
     }
 }

@@ -106,9 +106,18 @@
                                 </div>
                                 <div class="confirm-color-section">
                                     <div class="steps-section">
-                                        <a href="javascript:void(0)" class="steps">1. SELECT MODEL</a>
-                                        <a href="javascript:void(0)" class="steps steps-two">2. SELECT COLOR</a>
-                                        <a href="javascript:void(0)" class="steps pending">3. YOUR DETAILS AND PREFFERED LOCATION</a>
+                                        <a href="javascript:void(0)" class="steps steps-one">
+                                            <span class="badge-num">01</span> 
+                                            <span>MODEL</span>
+                                        </a>
+                                        <a href="javascript:void(0)" class="steps steps-two" id="second-item">
+                                            <span class="badge-num">02</span> 
+                                            <span>SELECT COLOR</span>
+                                        </a>
+                                        <a href="javascript:void(0)" class="steps pending steps-three">
+                                            <span class="badge-num">03</span>
+                                            <span>YOUR DETAILS AND PREFFERED LOCATION</span>
+                                        </a>
                                     </div>
                                     <div class="choose-a-color-txt">
                                         <h5>Choose a colour</h5>
@@ -181,7 +190,7 @@
                                                     }else{
                                                         $checked = "false"; 
                                                     }
-                                                    $radio_buttons .= '<input type="radio" class="choose-a-color" name="options" id="option'.$i.'" style="background-color:'.$color_code.'" value="'.$color_code.'" autocomplete="off"' . ($i==0 ? "checked" : "") . ' /> ';
+                                                    $radio_buttons .= '<input type="radio" class="choose-a-color" name="options" id="color-option-'.$i.'" onchange="changeColor('.$i.')" style="background-color:'.$color_code.'" value="'.$color_code.'" autocomplete="off"' . ($i==0 ? "checked" : "") . ' /> ';
 
                                                 }
                                                 echo $radio_buttons;
