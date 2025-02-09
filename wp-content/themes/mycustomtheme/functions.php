@@ -14,6 +14,7 @@
         $version   =   1.0;
         // css files
         wp_enqueue_style( 'style',  get_template_directory_uri(). '/style.css', array(), $version );
+        wp_enqueue_style( 'header',  get_template_directory_uri(). '/css/header.css', array(), $version );
 
         // js files
         wp_enqueue_script('custom', get_template_directory_uri().'/all.js', array(), $version, true);

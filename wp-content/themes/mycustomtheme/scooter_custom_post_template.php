@@ -8,7 +8,6 @@
     $post_id                =   (isset($post->ID)) ? $post->ID : 0;
     $seo_content            =   get_custom_seo_content($post_id);
     $get_color_options      =   $seo_content['enable_color_options'];
-    $default_model_image    =   $get_color_options['color_option_1']['model_image']['sizes']['medium_large'];
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -18,7 +17,7 @@
         <meta name="robots" content="index,follow">
         <title>Test Website</title>
         <!-- Latest compiled and minified CSS -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">        
+		<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
                
         <!-- font family load -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
@@ -27,6 +26,7 @@
         <?php wp_head() ?>
     </head>
     <body <?php body_class() ?>>
+        <?php include ('header.php') ?>
         <main>
             <section class="content-area content-thin">
                 <div class="container custom-container-style">
@@ -215,8 +215,8 @@
                 </div>
             </section>
         </main>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
         <?php
             wp_footer();
         ?> 

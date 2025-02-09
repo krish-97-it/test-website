@@ -10,11 +10,36 @@
     Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog, block-patterns
     Text Domain:
 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+img, svg {
+    vertical-align: middle;
+}
+body{
+    margin: 0;
+    /* text-align: center; */
+}
+input[type='radio'] {
+    margin: 0px;
+}
+.custom-container-style p, .custom-container-style h4, .custom-container-style h5, .custom-container-style h6{
+    margin: 0px;
+}
 .custom-container-style{
     max-width:100% !important;
     padding-left:0px !important;
     padding-right:0px !important;
     font-family: Pathway Extreme;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x)* .5);
+    padding-left: calc(var(--bs-gutter-x)* .5);
+    margin-right: auto;
+    margin-left: auto;
 }
 [data-active="false"]{
     display:none !important;
@@ -192,6 +217,7 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     opacity: 30%;
+    margin-bottom: 15px;
 }
 .display-scooter .footer-section .total-price-txt{
     font-size: 22px;
@@ -302,6 +328,7 @@
     height: 32px;
     border: 1px solid #E4E4E4;
     border-radius: 50%;
+    cursor: pointer;
 }
 .confirm-color-section .choose-color-options input[type='radio'] {
     -webkit-appearance:none;
