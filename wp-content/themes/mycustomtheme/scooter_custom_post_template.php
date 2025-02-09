@@ -39,50 +39,65 @@
                                             <h6><?= the_title();?></h6>
                                         </div>
                                         <?php
-                                            $model_heading = "";
-                                            for($i=0; $i<count($get_color_options); $i++){
-                                                $k = $i;
-                                                $array_name         = 'color_option_'.$k+1;
-                                                $item               = $get_color_options[$array_name];
-                                                $color_code         = $item['color_code'];
-                                                $color_title        = $item['color_name'];
-                                                $image_alt          = $item['model_image']['alt'];
-                                                $model_image        = $item['model_image']['url'];
+                                            if(count($get_color_options) > 0){
+                                                $model_heading = "";
+                                                for($i=0; $i<count($get_color_options); $i++){
+                                                    $k = $i;
+                                                    $array_name         = 'color_option_'.$k+1;
+                                                    $item               = $get_color_options[$array_name];
+                                                    $color_code         = $item['color_code'];
+                                                    $color_title        = $item['color_name'];
+                                                    $image_alt          = $item['model_image']['alt'];
+                                                    $model_image        = $item['model_image']['url'];
 
-                                                if($i==0){
-                                                    $active = "true"; 
-                                                }else{
-                                                    $active = "false"; 
+                                                    if($i==0){
+                                                        $active         = "true"; 
+                                                    }else{
+                                                        $active         = "false"; 
+                                                    }
+                                                    $model_heading      .= ' <div class="selected-color" id="color-code-title-'.$i.'" data-color-code="'.$color_code.'" data-active='.$active.'>
+                                                                            <div class="color-box" style="background-color:'.$color_code.'"></div>
+                                                                            <p class="color-title mb-0">'.$color_title.'</p>
+                                                                            </div>';
                                                 }
-                                                $model_heading .= ' <div class="selected-color" id="color-code-title'.$i.'" data-color-code="'.$color_code.'" data-active='.$active.'>
-                                                                        <div class="color-box" style="background-color:'.$color_code.'"></div>
-                                                                        <p class="color-title mb-0">'.$color_title.'</p>
+                                                echo $model_heading;
+                                            }else{
+                                                $model_heading  = "";
+                                                $model_heading  .= ' <div class="selected-color" id="color-code-title-0" data-color-code="#9fcabc" data-active="true">
+                                                                        <div class="color-box" style="background-color:#9fcabc"></div>
+                                                                        <p class="color-title mb-0">Sparkling Green</p>
                                                                     </div>';
+                                                echo $model_heading;
                                             }
-                                            echo $model_heading;
                                         ?>
                                     </div>
                                     <div class="hr-line"></div>
                                     <div class="body-section">
                                         <?php
-                                            $model_image= "";
-                                            for($i=0; $i<count($get_color_options); $i++){
-                                                $k = $i;
-                                                $array_name         = 'color_option_'.$k+1;
-                                                $item               = $get_color_options[$array_name];
-                                                $color_code         = $item['color_code'];
-                                                $color_title        = $item['color_name'];
-                                                $image_alt          = $item['model_image']['alt'];
-                                                $model_image_url    = $item['model_image']['url'];
+                                            if(count($get_color_options)){
+                                                $model_image= "";
+                                                for($i=0; $i<count($get_color_options); $i++){
+                                                    $k = $i;
+                                                    $array_name         = 'color_option_'.$k+1;
+                                                    $item               = $get_color_options[$array_name];
+                                                    $color_code         = $item['color_code'];
+                                                    $color_title        = $item['color_name'];
+                                                    $image_alt          = $item['model_image']['alt'];
+                                                    $model_image_url    = $item['model_image']['url'];
 
-                                                if($i==0){
-                                                    $active = "true"; 
-                                                }else{
-                                                    $active = "false"; 
+                                                    if($i==0){
+                                                        $active         = "true"; 
+                                                    }else{
+                                                        $active         = "false"; 
+                                                    }
+                                                    $model_image        .=   '<img class="model-color-img" id="model-img-'.$i.'" src="'.$model_image_url.'" alt="storie" data-color-code="'.$color_code.'" data-active='.$active.' width="768px" height="576px"/>';
                                                 }
-                                                $model_image    .=   '<img class="model-color-img" id="model-img-'.$i.'" src="'.$model_image_url.'" alt="storie" data-color-code="'.$color_code.'" data-active='.$active.' width="768px" height="576px"/>';
+                                                echo $model_image;
+                                            }else{
+                                                $model_image            = "";
+                                                $model_image            .=   '<img class="model-color-img" id="model-img-0" src="http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp" alt="storie" data-color-code="#9fcabc" data-active="true" width="768px" height="576px"/>';
+                                                echo $model_image;
                                             }
-                                            echo $model_image;
                                         ?>
                                     </div>
                                     <div class="hr-line hidden-mob"></div>
@@ -129,47 +144,60 @@
                                                 <div class="model-color-title">
                                                     <h6>Storie</h6>
                                                     <?php
-                                                        $model_heading = "";
-                                                        for($i=0; $i<count($get_color_options); $i++){
-                                                            $k = $i;
-                                                            $array_name         = 'color_option_'.$k+1;
-                                                            $item               = $get_color_options[$array_name];
-                                                            $color_code         = $item['color_code'];
-                                                            $color_title        = $item['color_name'];
-                                                            $image_alt          = $item['model_image']['alt'];
-                                                            $model_image        = $item['model_image']['url'];
+                                                        if(count($get_color_options)>0){
+                                                            $model_heading = "";
+                                                            for($i=0; $i<count($get_color_options); $i++){
+                                                                $k = $i;
+                                                                $array_name         = 'color_option_'.$k+1;
+                                                                $item               = $get_color_options[$array_name];
+                                                                $color_code         = $item['color_code'];
+                                                                $color_title        = $item['color_name'];
+                                                                $image_alt          = $item['model_image']['alt'];
+                                                                $model_image        = $item['model_image']['url'];
 
-                                                            if($i==0){
-                                                                $active = "true"; 
-                                                            }else{
-                                                                $active = "false"; 
+                                                                if($i==0){
+                                                                    $active         = "true"; 
+                                                                }else{
+                                                                    $active         = "false"; 
+                                                                }
+                                                                $model_heading      .= '<p class="mb-0 selected-color"  id="color-code-small-title-'.$i.'" data-color-code="'.$color_code.'" data-active='.$active.'>'.$color_title.'</p>';
                                                             }
-                                                            $model_heading .= '<p class="mb-0 selected-color"  id="color-code-small-title'.$i.'" data-color-code="'.$color_code.'" data-active='.$active.'>'.$color_title.'</p>';
+                                                            echo $model_heading;
+                                                        }else{
+                                                            $model_heading          = "";
+                                                            $model_heading          .= '<p class="mb-0 selected-color"  id="color-code-small-title-0" data-color-code="#9fcabc" data-active="true">Sparkling Green</p>';
+                                                            echo $model_heading;
                                                         }
-                                                        echo $model_heading;
                                                     ?>
                                                 </div>
                                             </div>
                                             <div class="scooter-img-small">
                                             <?php
-                                                $model_image= "";
-                                                for($i=0; $i<count($get_color_options); $i++){
-                                                    $k = $i;
-                                                    $array_name         = 'color_option_'.$k+1;
-                                                    $item               = $get_color_options[$array_name];
-                                                    $color_code         = $item['color_code'];
-                                                    $color_title        = $item['color_name'];
-                                                    $image_alt          = $item['model_image']['alt'];
-                                                    $model_image_url    = $item['model_image']['url'];
+                                                if(count($get_color_options)>0){
+                                                    $model_image= "";
+                                                    for($i=0; $i<count($get_color_options); $i++){
+                                                        $k = $i;
+                                                        $array_name         = 'color_option_'.$k+1;
+                                                        $item               = $get_color_options[$array_name];
+                                                        $color_code         = $item['color_code'];
+                                                        $color_title        = $item['color_name'];
+                                                        $image_alt          = $item['model_image']['alt'];
+                                                        $model_image_url    = $item['model_image']['url'];
 
-                                                    if($i==0){
-                                                        $active = "true"; 
-                                                    }else{
-                                                        $active = "false"; 
+                                                        if($i==0){
+                                                            $active = "true"; 
+                                                        }else{
+                                                            $active = "false"; 
+                                                        }
+                                                        $model_image    .=   '<img class="model-color-img" id="model-small-img-'.$i.'" src="'.$model_image_url.'" alt="storie" data-color-code="'.$color_code.'" data-active='.$active.' width="768px" height="576px"/>';
                                                     }
-                                                    $model_image    .=   '<img class="model-color-img" id="model-small-img-'.$i.'" src="'.$model_image_url.'" alt="storie" data-color-code="'.$color_code.'" data-active='.$active.' width="768px" height="576px"/>';
+                                                    echo $model_image;
+                                                }else{
+                                                    $model_image= "";
+                                                    $model_image    .=   '<img class="model-color-img" id="model-small-img-0" src="http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp" alt="storie" data-color-code="#9fcabc" data-active="true" width="768px" height="576px"/>';
+                                                    echo $model_image;
                                                 }
-                                                echo $model_image;
+                                                
                                             ?>
                                             </div>
                                         </div>
@@ -215,10 +243,11 @@
                 </div>
             </section>
         </main>
+        <?php include ('footer.php') ?>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
         <?php
             wp_footer();
-        ?> 
+        ?>
     </body>
 </html>

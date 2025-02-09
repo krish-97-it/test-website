@@ -1,11 +1,8 @@
 .header{
     background: rgb(0, 0, 0);
-    -webkit-backdrop-filter: blur(8.5px);
-    backdrop-filter: blur(8.5px);
     position: sticky;
     top: 0;
     z-index: 999;
-    transition: 0.35s linear;
     font-family: Pathway Extreme;
 }
 .navbar-container-style{
