@@ -1,0 +1,178 @@
+.header{
+    background: rgb(0, 0, 0);
+    -webkit-backdrop-filter: blur(8.5px);
+    backdrop-filter: blur(8.5px);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: 0.35s linear;
+    font-family: Pathway Extreme;
+}
+.navbar-container-style{
+    display: flex;
+    align-items: center;
+    padding: 8px 78px;
+    background: rgb(0, 0, 0);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+    min-height: 60px;
+}
+.nav-menu-items{
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+    width: 100%;
+}
+.brand-logo-img{
+    padding-right: 48px;
+}
+.brand-logo-img img{
+    width: 76px;
+    height: auto;
+}
+.navbar-nav-ul{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 48px;
+    list-style-type: none;
+    padding-left: 0px;
+}
+.nav-item{
+    list-style: none;
+}
+.nav-item .nav-link{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 2%;
+    text-decoration: none;
+    color: #FFFFFF;
+    position: relative;
+}
+.nav-link-badge{
+    display: flex;
+    gap: 5px;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+.nav-item .badge-box{
+    color: black;
+    background-color: yellow;
+    width: 28px;
+    height: 14px;
+    border-radius: 1px;
+    padding-right: 3px;
+    padding-left: 3px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13.56px;
+    letter-spacing: 0%;
+}
+
+[data-btn-show="true"]{
+    display: block;
+}
+[data-btn-show="false"]{
+    display: none;
+}
+.navbar-toggle-btn{
+    display: none;
+}
+.navbar-toggle{
+	border: none;
+	background: transparent !important;
+    padding: 0px;
+}
+.navbar-toggle-x{
+    color: white;
+    font-size: 27px;
+    margin-bottom: 4px;
+}
+.navbar-toggle .icon-bar {
+	display: block;
+    width: 16px;
+    height: 2px !important;
+    margin-bottom: 4px;
+    position: relative;
+    background: white;
+}
+.navbar-toggle .icon-bar-two{
+    width: 10px;
+    margin-left: auto;
+}
+.navbar-toggle .icon-bar-three{
+    margin-bottom: 0px;
+}
+
+@media(max-width:1299.98px){
+    .navbar-container-style{
+        padding: 8px 30px;
+    }
+    .brand-logo-img{
+        padding-right: 40px;
+    }
+    .navbar-nav-ul{
+        gap: 40px;
+    }
+}
+@media(max-width:1049.98px){
+    .navbar-container-style{
+        padding: 8px 20px;
+    }
+}
+@media(max-width:991.98px){
+    .navbar-container-style{
+        justify-content: space-between;
+    }
+    .navbar-toggle-btn{
+        display: block;
+    }
+    .nav-menu-items{
+        flex-direction: column;
+        display: none;
+    }
+    .navbar-nav-ul{
+        flex-direction: column;
+    }
+    .navbar-toggle-btn{
+        display: block;
+    }
+    .navbar-container-style [data-collapse="false"]{
+        display: none;
+    }
+    .navbar-container-style [data-collapse="true"]{
+        display: flex;
+        position: absolute;
+        top: 60px;
+        background-color: black;
+        left: 0px;
+        padding: 20px 20px 30px 20px;
+    }
+    [navbar-collapse="true"]{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 48px;
+        padding-top: 12px;
+    }
+    [navbar-collapse="true"] .navbar-toggle-btn{
+        position: absolute;
+        right: 20px;
+    }
+    [navbar-collapse="true"] .brand-logo-img{
+        padding-top: 7.5px;
+    }
+}
+@media(max-width:359.98px){
+    .navbar-container-style {
+        padding: 8px 15px;
+    }
+    .navbar-container-style [data-collapse="true"]{
+        padding: 20px 15px 30px 15px;
+    }
+    [navbar-collapse="true"] .navbar-toggle-btn{
+        position: absolute;
+        right: 15px;
+    }
+}
