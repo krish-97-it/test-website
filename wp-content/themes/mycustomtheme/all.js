@@ -1,3 +1,52 @@
+// On click color options image, color name, color box will be changed
+function changeColor(index){
+    var ele_id                  =   "color-option-"+index;
+    var selected_color_code     =   document.getElementById(ele_id).value;
+    var color_headings          =   document.getElementsByClassName('selected-color');
+    var model_images            =   document.getElementsByClassName('model-color-img');
+
+    for(var i=0; i<color_headings.length; i++){     //  For all color headings, where color code match with the choosed color, it will be shown and other will be hide
+        var slide_attr = color_headings[i].getAttribute('data-color-code');
+        if(selected_color_code == slide_attr){
+            color_headings[i].setAttribute('data-active','true');
+            color_headings[i].setAttribute('fade-in-out','true');
+        }else{
+            color_headings[i].setAttribute('data-active','false');
+            color_headings[i].setAttribute('fade-in-out','false');
+        }
+    }
+
+    for(var i=0; i<model_images.length; i++){       //  For all model images, where color code match with the choosed color, it will be shown and other will be hide
+        var slide_attr = model_images[i].getAttribute('data-color-code');
+        if(selected_color_code == slide_attr){
+            model_images[i].setAttribute('data-active','true');
+            model_images[i].setAttribute('fade-in-out','true');
+        }else{
+            model_images[i].setAttribute('data-active','false');
+            model_images[i].setAttribute('fade-in-out','false');
+        }
+    }
+}
+
+// On click toggle button toogle navbar and show nav elements
+function showNavItems(){
+    console.log('enable menu');
+    document.getElementById('navbar-toggle-bar').setAttribute('data-btn-show', 'false');
+    document.getElementById('navbar-toggle-x').setAttribute('data-btn-show', 'true');
+    document.getElementById('nav-menu-items').setAttribute('data-collapse','true');
+    document.getElementById('navbar-container-style').setAttribute('navbar-collapse','true');
+}
+
+// // On click toggle cross button toogle navbar and hide nav elements
+function hideNavItems(){
+    console.log('disable menu');
+    document.getElementById('navbar-toggle-x').setAttribute('data-btn-show', 'false');
+    document.getElementById('navbar-toggle-bar').setAttribute('data-btn-show', 'true');
+    document.getElementById('nav-menu-items').setAttribute('data-collapse','false');
+    document.getElementById('navbar-container-style').setAttribute('navbar-collapse','false');
+}
+
+
 // jQuery(document).ready(function(){
 //     jQuery('.choose-a-color').click(function(){
 //         var selected_color_code     =   jQuery(this).val();
@@ -27,48 +76,3 @@
 //         })
 //     })
 // })
-
-function changeColor(index){
-    var ele_id                  =   "color-option-"+index;
-    var selected_color_code     =   document.getElementById(ele_id).value;
-    var color_headings          =   document.getElementsByClassName('selected-color');
-    var model_images            =   document.getElementsByClassName('model-color-img');
-
-    for(var i=0; i<color_headings.length; i++){
-        var slide_attr = color_headings[i].getAttribute('data-color-code');
-        if(selected_color_code == slide_attr){
-            color_headings[i].setAttribute('data-active','true');
-            color_headings[i].setAttribute('fade-in-out','true');
-        }else{
-            color_headings[i].setAttribute('data-active','false');
-            color_headings[i].setAttribute('fade-in-out','false');
-        }
-    }
-
-    for(var i=0; i<model_images.length; i++){
-        var slide_attr = model_images[i].getAttribute('data-color-code');
-        if(selected_color_code == slide_attr){
-            model_images[i].setAttribute('data-active','true');
-            model_images[i].setAttribute('fade-in-out','true');
-        }else{
-            model_images[i].setAttribute('data-active','false');
-            model_images[i].setAttribute('fade-in-out','false');
-        }
-    }
-}
-
-function showNavItems(){
-    console.log('enable menu');
-    document.getElementById('navbar-toggle-bar').setAttribute('data-btn-show', 'false');
-    document.getElementById('navbar-toggle-x').setAttribute('data-btn-show', 'true');
-    document.getElementById('nav-menu-items').setAttribute('data-collapse','true');
-    document.getElementById('navbar-container-style').setAttribute('navbar-collapse','true');
-}
-
-function hideNavItems(){
-    console.log('disable menu');
-    document.getElementById('navbar-toggle-x').setAttribute('data-btn-show', 'false');
-    document.getElementById('navbar-toggle-bar').setAttribute('data-btn-show', 'true');
-    document.getElementById('nav-menu-items').setAttribute('data-collapse','false');
-    document.getElementById('navbar-container-style').setAttribute('navbar-collapse','false');
-}
