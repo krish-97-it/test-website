@@ -48,20 +48,22 @@
                                                     $k = $i;
                                                     $array_name         = 'color_option_'.$k+1;
                                                     $item               = $get_color_options[$array_name];
-                                                    $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
-                                                    $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
-                                                    $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
-                                                    $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
+                                                    if($item['is_available'] == 1){
+                                                        $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
+                                                        $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
+                                                        $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
+                                                        $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
 
-                                                    if($i==0){
-                                                        $active         = "true"; 
-                                                    }else{
-                                                        $active         = "false"; 
+                                                        if($i==0){
+                                                            $active         = "true"; 
+                                                        }else{
+                                                            $active         = "false"; 
+                                                        }
+                                                        $model_heading      .= ' <div class="selected-color" id="color-code-title-'.$i.'" data-color-code="'.$color_code.'" data-active='.$active.'>
+                                                                                <div class="color-box" style="background-color:'.$color_code.'"></div>
+                                                                                <p class="color-title mb-0">'.$color_title.'</p>
+                                                                                </div>';
                                                     }
-                                                    $model_heading      .= ' <div class="selected-color" id="color-code-title-'.$i.'" data-color-code="'.$color_code.'" data-active='.$active.'>
-                                                                            <div class="color-box" style="background-color:'.$color_code.'"></div>
-                                                                            <p class="color-title mb-0">'.$color_title.'</p>
-                                                                            </div>';
                                                 }
                                                 echo $model_heading;
                                             }else{
@@ -83,18 +85,20 @@
                                                     $k = $i;
                                                     $array_name         = 'color_option_'.$k+1;
                                                     $item               = $get_color_options[$array_name];
-                                                    $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
-                                                    $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
-                                                    $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
-                                                    $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
+                                                    if($item['is_available'] == 1){
+                                                        $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
+                                                        $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
+                                                        $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
+                                                        $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
 
 
-                                                    if($i==0){
-                                                        $active         = "true"; 
-                                                    }else{
-                                                        $active         = "false"; 
-                                                    }
-                                                    $model_image        .=   '<img class="model-color-img" id="model-img-'.$i.'" src="'.$model_image_url.'" alt="storie" data-color-code="'.$color_code.'" data-active='.$active.' width="768px" height="576px"/>';
+                                                        if($i==0){
+                                                            $active         = "true"; 
+                                                        }else{
+                                                            $active         = "false"; 
+                                                        }
+                                                        $model_image        .=   '<img class="model-color-img" id="model-img-'.$i.'" src="'.$model_image_url.'" alt="storie" data-color-code="'.$color_code.'" data-active='.$active.' width="768px" height="576px"/>';
+                                                    }   
                                                 }
                                                 echo $model_image;
                                             }else{
@@ -154,18 +158,20 @@
                                                                 $k = $i;
                                                                 $array_name         = 'color_option_'.$k+1;
                                                                 $item               = $get_color_options[$array_name];
-                                                                $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
-                                                                $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
-                                                                $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
-                                                                $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
+                                                                if($item['is_available'] == 1){
+                                                                    $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
+                                                                    $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
+                                                                    $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
+                                                                    $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
 
 
-                                                                if($i==0){
-                                                                    $active         = "true"; 
-                                                                }else{
-                                                                    $active         = "false"; 
+                                                                    if($i==0){
+                                                                        $active         = "true"; 
+                                                                    }else{
+                                                                        $active         = "false"; 
+                                                                    }
+                                                                    $model_heading      .= '<p class="mb-0 selected-color"  id="color-code-small-title-'.$i.'" data-color-code="'.$color_code.'" data-active='.$active.'>'.$color_title.'</p>';
                                                                 }
-                                                                $model_heading      .= '<p class="mb-0 selected-color"  id="color-code-small-title-'.$i.'" data-color-code="'.$color_code.'" data-active='.$active.'>'.$color_title.'</p>';
                                                             }
                                                             echo $model_heading;
                                                         }else{
@@ -184,18 +190,20 @@
                                                         $k = $i;
                                                         $array_name         = 'color_option_'.$k+1;
                                                         $item               = $get_color_options[$array_name];
-                                                        $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
-                                                        $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
-                                                        $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
-                                                        $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
+                                                        if($item['is_available'] == 1){
+                                                            $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
+                                                            $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
+                                                            $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
+                                                            $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
 
 
-                                                        if($i==0){
-                                                            $active = "true"; 
-                                                        }else{
-                                                            $active = "false"; 
+                                                            if($i==0){
+                                                                $active = "true"; 
+                                                            }else{
+                                                                $active = "false"; 
+                                                            }
+                                                            $model_image    .=   '<img class="model-color-img" id="model-small-img-'.$i.'" src="'.$model_image_url.'" alt="storie" data-color-code="'.$color_code.'" data-active='.$active.' width="768px" height="576px"/>';
                                                         }
-                                                        $model_image    .=   '<img class="model-color-img" id="model-small-img-'.$i.'" src="'.$model_image_url.'" alt="storie" data-color-code="'.$color_code.'" data-active='.$active.' width="768px" height="576px"/>';
                                                     }
                                                     echo $model_image;
                                                 }else{
@@ -215,18 +223,19 @@
                                                         $k = $i;
                                                         $array_name         = 'color_option_'.$k+1;
                                                         $item               = $get_color_options[$array_name];
-                                                        $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
-                                                        $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
-                                                        $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
-                                                        $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
+                                                        if($item['is_available'] == 1){
+                                                            $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
+                                                            $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
+                                                            $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
+                                                            $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
 
-                                                        if($i==0){
-                                                            $checked = "checked"; 
-                                                        }else{
-                                                            $checked = "false"; 
+                                                            if($i==0){
+                                                                $checked = "checked"; 
+                                                            }else{
+                                                                $checked = "false"; 
+                                                            }
+                                                            $radio_buttons .= '<input type="radio" class="choose-a-color" name="options" id="color-option-'.$i.'" onchange="changeColor('.$i.')" style="background-color:'.$color_code.'" value="'.$color_code.'" autocomplete="off"' . ($i==0 ? "checked" : "") . ' /> ';
                                                         }
-                                                        $radio_buttons .= '<input type="radio" class="choose-a-color" name="options" id="color-option-'.$i.'" onchange="changeColor('.$i.')" style="background-color:'.$color_code.'" value="'.$color_code.'" autocomplete="off"' . ($i==0 ? "checked" : "") . ' /> ';
-
                                                     }
                                                     echo $radio_buttons;
                                                 }else{
