@@ -26,7 +26,10 @@
         <?php wp_head() ?>
     </head>
     <body <?php body_class() ?>>
+
+        <!--    Include header section   -->
         <?php include ('header.php') ?>
+
         <main>
             <section class="content-area content-thin">
                 <div class="container custom-container-style">
@@ -45,10 +48,10 @@
                                                     $k = $i;
                                                     $array_name         = 'color_option_'.$k+1;
                                                     $item               = $get_color_options[$array_name];
-                                                    $color_code         = $item['color_code'];
-                                                    $color_title        = $item['color_name'];
-                                                    $image_alt          = $item['model_image']['alt'];
-                                                    $model_image        = $item['model_image']['url'];
+                                                    $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
+                                                    $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
+                                                    $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
+                                                    $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
 
                                                     if($i==0){
                                                         $active         = "true"; 
@@ -80,10 +83,11 @@
                                                     $k = $i;
                                                     $array_name         = 'color_option_'.$k+1;
                                                     $item               = $get_color_options[$array_name];
-                                                    $color_code         = $item['color_code'];
-                                                    $color_title        = $item['color_name'];
-                                                    $image_alt          = $item['model_image']['alt'];
-                                                    $model_image_url    = $item['model_image']['url'];
+                                                    $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
+                                                    $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
+                                                    $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
+                                                    $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
+
 
                                                     if($i==0){
                                                         $active         = "true"; 
@@ -150,10 +154,11 @@
                                                                 $k = $i;
                                                                 $array_name         = 'color_option_'.$k+1;
                                                                 $item               = $get_color_options[$array_name];
-                                                                $color_code         = $item['color_code'];
-                                                                $color_title        = $item['color_name'];
-                                                                $image_alt          = $item['model_image']['alt'];
-                                                                $model_image        = $item['model_image']['url'];
+                                                                $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
+                                                                $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
+                                                                $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
+                                                                $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
+
 
                                                                 if($i==0){
                                                                     $active         = "true"; 
@@ -179,10 +184,11 @@
                                                         $k = $i;
                                                         $array_name         = 'color_option_'.$k+1;
                                                         $item               = $get_color_options[$array_name];
-                                                        $color_code         = $item['color_code'];
-                                                        $color_title        = $item['color_name'];
-                                                        $image_alt          = $item['model_image']['alt'];
-                                                        $model_image_url    = $item['model_image']['url'];
+                                                        $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
+                                                        $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
+                                                        $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
+                                                        $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
+
 
                                                         if($i==0){
                                                             $active = "true"; 
@@ -203,26 +209,32 @@
                                         </div>
                                         <div class="choose-color-options">
                                             <?php
-                                                $radio_buttons = "";
-                                                for($i=0; $i<count($get_color_options); $i++){
-                                                    $k = $i;
-                                                    $array_name         = 'color_option_'.$k+1;
-                                                    $item               = $get_color_options[$array_name];
-                                                    $color_code         = $item['color_code'];
-                                                    $color_title        = $item['color_name'];
-                                                    $image_alt          = $item['model_image']['alt'];
-                                                    $model_image        = $item['model_image']['url'];
+                                                if(count($get_color_options)>0){
+                                                    $radio_buttons = "";
+                                                    for($i=0; $i<count($get_color_options); $i++){
+                                                        $k = $i;
+                                                        $array_name         = 'color_option_'.$k+1;
+                                                        $item               = $get_color_options[$array_name];
+                                                        $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
+                                                        $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
+                                                        $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
+                                                        $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
 
-                                                    if($i==0){
-                                                        $checked = "checked"; 
-                                                    }else{
-                                                        $checked = "false"; 
+                                                        if($i==0){
+                                                            $checked = "checked"; 
+                                                        }else{
+                                                            $checked = "false"; 
+                                                        }
+                                                        $radio_buttons .= '<input type="radio" class="choose-a-color" name="options" id="color-option-'.$i.'" onchange="changeColor('.$i.')" style="background-color:'.$color_code.'" value="'.$color_code.'" autocomplete="off"' . ($i==0 ? "checked" : "") . ' /> ';
+
                                                     }
-                                                    $radio_buttons .= '<input type="radio" class="choose-a-color" name="options" id="color-option-'.$i.'" onchange="changeColor('.$i.')" style="background-color:'.$color_code.'" value="'.$color_code.'" autocomplete="off"' . ($i==0 ? "checked" : "") . ' /> ';
-
+                                                    echo $radio_buttons;
+                                                }else{
+                                                    $radio_buttons = "";
+                                                    $radio_buttons .= '<input type="radio" class="choose-a-color" name="options" id="color-option-0" onchange="changeColor(0)" style="background-color:#9fcabc" value="#9fcabc" autocomplete="off" checked /> ';
+                                                    echo $radio_buttons;
                                                 }
-                                                echo $radio_buttons;
-                                                // <label class="btn choose-a-color" for="option'.$i.'" style="background-color:'.$color_code.'"></label>
+                                                
                                             ?>
                                         </div>
                                     </div>
@@ -243,11 +255,13 @@
                 </div>
             </section>
         </main>
+        
+        <!-- include footer section -->
         <?php include ('footer.php') ?>
+
+        <!-- include JQuery & bootsrap minfied js -->
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
-        <?php
-            wp_footer();
-        ?>
+        <?php wp_footer(); ?>
     </body>
 </html>
