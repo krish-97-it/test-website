@@ -46,7 +46,7 @@
                                                 $model_heading = "";
                                                 for($i=0; $i<count($get_color_options); $i++){
                                                     $k = $i;
-                                                    $array_name         = 'color_option_'.$k+1;
+                                                    $array_name         = 'color_option_'.strval($k+1);
                                                     $item               = $get_color_options[$array_name];
                                                     if($item['is_available'] == 1){
                                                         $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
@@ -83,7 +83,7 @@
                                                 $model_image= "";
                                                 for($i=0; $i<count($get_color_options); $i++){
                                                     $k = $i;
-                                                    $array_name         = 'color_option_'.$k+1;
+                                                    $array_name         = 'color_option_'.strval($k+1);
                                                     $item               = $get_color_options[$array_name];
                                                     if($item['is_available'] == 1){
                                                         $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
@@ -156,7 +156,7 @@
                                                             $model_heading = "";
                                                             for($i=0; $i<count($get_color_options); $i++){
                                                                 $k = $i;
-                                                                $array_name         = 'color_option_'.$k+1;
+                                                                $array_name         = 'color_option_'.strval($k+1);
                                                                 $item               = $get_color_options[$array_name];
                                                                 if($item['is_available'] == 1){
                                                                     $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
@@ -188,7 +188,7 @@
                                                     $model_image= "";
                                                     for($i=0; $i<count($get_color_options); $i++){
                                                         $k = $i;
-                                                        $array_name         = 'color_option_'.$k+1;
+                                                        $array_name         = 'color_option_'.strval($k+1);
                                                         $item               = $get_color_options[$array_name];
                                                         if($item['is_available'] == 1){
                                                             $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
@@ -221,7 +221,7 @@
                                                     $radio_buttons = "";
                                                     for($i=0; $i<count($get_color_options); $i++){
                                                         $k = $i;
-                                                        $array_name         = 'color_option_'.$k+1;
+                                                        $array_name         = 'color_option_'.strval($k+1);
                                                         $item               = $get_color_options[$array_name];
                                                         if($item['is_available'] == 1){
                                                             $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
