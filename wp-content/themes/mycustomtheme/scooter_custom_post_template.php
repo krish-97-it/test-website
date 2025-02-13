@@ -8,6 +8,7 @@
     $post_id                =   (isset($post->ID)) ? $post->ID : 0;
     $seo_content            =   get_custom_seo_content($post_id);
     $get_color_options      =   $seo_content['enable_color_options'];
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -48,12 +49,21 @@
                                                     $k = $i;
                                                     $array_name         = 'color_option_'.strval($k+1);
                                                     $item               = $get_color_options[$array_name];
-                                                    if($item['is_available'] == 1){
-                                                        $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
-                                                        $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
-                                                        $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
-                                                        $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
 
+                                                    if($item['is_available'] == 1 && !empty($item['color_code']) && !empty($item['color_name'])){
+                                                        $color_code         = ($item['color_code']);
+                                                        $color_title        = ($item['color_name']);
+                                                        $default_model_img  = $get_color_options['color_option_1']['model_image']['url'];
+                                                        $default_img_alt    = $get_color_options['color_option_1']['model_image']['alt'];
+
+                                                        if(!empty($item['model_image'])){
+                                                            $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : $default_img_alt);
+                                                            $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : $default_model_img);    
+                                                        }else{
+                                                            $image_alt          = $default_img_alt;
+                                                            $model_image_url    = $default_model_img;
+                                                        }
+                                                      
                                                         if($i==0){
                                                             $active         = "true"; 
                                                         }else{
@@ -85,25 +95,34 @@
                                                     $k = $i;
                                                     $array_name         = 'color_option_'.strval($k+1);
                                                     $item               = $get_color_options[$array_name];
-                                                    if($item['is_available'] == 1){
-                                                        $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
-                                                        $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
-                                                        $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
-                                                        $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
 
+                                                    if($item['is_available'] == 1 && !empty($item['color_code']) && !empty($item['color_name'])){
+                                                        
+                                                        $color_code         = ($item['color_code']);
+                                                        $color_title        = ($item['color_name']);
+                                                        $default_model_img  = $get_color_options['color_option_1']['model_image']['url'];
+                                                        $default_img_alt    = $get_color_options['color_option_1']['model_image']['alt'];
+
+                                                        if(!empty($item['model_image'])){
+                                                            $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : $default_img_alt);
+                                                            $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : $default_model_img);    
+                                                        }else{
+                                                            $image_alt          = $default_img_alt;
+                                                            $model_image_url    = $default_model_img;
+                                                        }
 
                                                         if($i==0){
                                                             $active         = "true"; 
                                                         }else{
                                                             $active         = "false"; 
                                                         }
-                                                        $model_image        .=   '<img class="model-color-img" id="model-img-'.$i.'" src="'.$model_image_url.'" alt="storie" data-color-code="'.$color_code.'" data-active='.$active.' width="768px" height="576px"/>';
+                                                        $model_image        .=   '<img class="model-color-img" id="model-img-'.$i.'" src="'.$model_image_url.'" alt="storie" data-color-code="'.$color_code.'" data-img-active='.$active.' img-fade-out="false" width="768px" height="576px"/>';
                                                     }   
                                                 }
                                                 echo $model_image;
                                             }else{
                                                 $model_image            = "";
-                                                $model_image            .=   '<img class="model-color-img" id="model-img-0" src="http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp" alt="storie" data-color-code="#9fcabc" data-active="true" width="768px" height="576px"/>';
+                                                $model_image            .=   '<img class="model-color-img" id="model-img-0" src="http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp" alt="storie" data-color-code="#9fcabc" data-img-active="true" width="768px" height="576px"/>';
                                                 echo $model_image;
                                             }
                                         ?>
@@ -158,12 +177,19 @@
                                                                 $k = $i;
                                                                 $array_name         = 'color_option_'.strval($k+1);
                                                                 $item               = $get_color_options[$array_name];
-                                                                if($item['is_available'] == 1){
-                                                                    $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
-                                                                    $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
-                                                                    $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
-                                                                    $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
-
+                                                                if($item['is_available'] == 1 && !empty($item['color_code']) && !empty($item['color_name'])){
+                                                                    $color_code         = ($item['color_code']);
+                                                                    $color_title        = ($item['color_name']);
+                                                                    $default_model_img  = $get_color_options['color_option_1']['model_image']['url'];
+                                                                    $default_img_alt    = $get_color_options['color_option_1']['model_image']['alt'];
+            
+                                                                    if(!empty($item['model_image'])){
+                                                                        $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : $default_img_alt);
+                                                                        $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : $default_model_img);    
+                                                                    }else{
+                                                                        $image_alt          = $default_img_alt;
+                                                                        $model_image_url    = $default_model_img;
+                                                                    }
 
                                                                     if($i==0){
                                                                         $active         = "true"; 
@@ -190,25 +216,32 @@
                                                         $k = $i;
                                                         $array_name         = 'color_option_'.strval($k+1);
                                                         $item               = $get_color_options[$array_name];
-                                                        if($item['is_available'] == 1){
-                                                            $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
-                                                            $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
-                                                            $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
-                                                            $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
-
+                                                        if($item['is_available'] == 1 && !empty($item['color_code']) && !empty($item['color_name'])){
+                                                            $color_code         = ($item['color_code']);
+                                                            $color_title        = ($item['color_name']);
+                                                            $default_model_img  = $get_color_options['color_option_1']['model_image']['url'];
+                                                            $default_img_alt    = $get_color_options['color_option_1']['model_image']['alt'];
+    
+                                                            if(!empty($item['model_image'])){
+                                                                $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : $default_img_alt);
+                                                                $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : $default_model_img);    
+                                                            }else{
+                                                                $image_alt          = $default_img_alt;
+                                                                $model_image_url    = $default_model_img;
+                                                            }
 
                                                             if($i==0){
                                                                 $active = "true"; 
                                                             }else{
                                                                 $active = "false"; 
                                                             }
-                                                            $model_image    .=   '<img class="model-color-img" id="model-small-img-'.$i.'" src="'.$model_image_url.'" alt="storie" data-color-code="'.$color_code.'" data-active='.$active.' width="768px" height="576px"/>';
+                                                            $model_image    .=   '<img class="model-color-small-img" id="model-small-img-'.$i.'" src="'.$model_image_url.'" alt="storie" data-color-code="'.$color_code.'" data-active='.$active.' width="768px" height="576px"/>';
                                                         }
                                                     }
                                                     echo $model_image;
                                                 }else{
                                                     $model_image= "";
-                                                    $model_image    .=   '<img class="model-color-img" id="model-small-img-0" src="http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp" alt="storie" data-color-code="#9fcabc" data-active="true" width="768px" height="576px"/>';
+                                                    $model_image    .=   '<img class="model-color-small-img" id="model-small-img-0" src="http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp" alt="storie" data-color-code="#9fcabc" data-active="true" width="768px" height="576px"/>';
                                                     echo $model_image;
                                                 }
                                                 
@@ -223,11 +256,19 @@
                                                         $k = $i;
                                                         $array_name         = 'color_option_'.strval($k+1);
                                                         $item               = $get_color_options[$array_name];
-                                                        if($item['is_available'] == 1){
-                                                            $color_code         = (($item['color_code'] != '')? $item['color_code'] : '#9fcabc');
-                                                            $color_title        = (($item['color_name'] != '')? $item['color_name'] : 'Sparkling Green');
-                                                            $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : 'sparkling green');
-                                                            $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : 'http://localhost/test-website/wp-content/uploads/2025/02/sparkling-green.webp');
+                                                        if($item['is_available'] == 1 && !empty($item['color_code']) && !empty($item['color_name'])){
+                                                            $color_code         = ($item['color_code']);
+                                                            $color_title        = ($item['color_name']);
+                                                            $default_model_img  = $get_color_options['color_option_1']['model_image']['url'];
+                                                            $default_img_alt    = $get_color_options['color_option_1']['model_image']['alt'];
+    
+                                                            if(!empty($item['model_image'])){
+                                                                $image_alt          = (($item['model_image']['alt'] != '')? $item['model_image']['alt'] : $default_img_alt);
+                                                                $model_image_url    = (($item['model_image']['url'] != '')? $item['model_image']['url'] : $default_model_img);    
+                                                            }else{
+                                                                $image_alt          = $default_img_alt;
+                                                                $model_image_url    = $default_model_img;
+                                                            }
 
                                                             if($i==0){
                                                                 $checked = "checked"; 
